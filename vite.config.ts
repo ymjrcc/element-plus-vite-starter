@@ -32,6 +32,7 @@ export default defineConfig({
     VueRouter({
       extensions: ['.vue', '.md'],
       dts: 'src/typed-router.d.ts',
+      exclude: ['**/components/**'],
     }),
 
     Components({
@@ -56,4 +57,14 @@ export default defineConfig({
     // TODO: workaround until they support native ESM
     noExternal: ['element-plus'],
   },
+
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'http://192.168.0.235:8002',
+  //       changeOrigin: true,
+  //       rewrite: (path: string) => path.replace(/^\/api/, ''),
+  //     },
+  //   },
+  // },
 })
